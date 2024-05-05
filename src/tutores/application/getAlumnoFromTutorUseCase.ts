@@ -5,7 +5,7 @@ import { TutoresRepository } from "../domain/tutoresRepository";
 export class GetAlumnoFromTutorUseCase {
     constructor(private repository: TutoresRepository) {}
 
-    async execute(id: number): Promise<Tutores> {
-        return this.repository.getAlumnosFromTutor(id);
+    async execute(id_tutor: number): Promise<Tutores> {
+        return this.repository.getAlumnosFromTutor(id_tutor);
     }
 }

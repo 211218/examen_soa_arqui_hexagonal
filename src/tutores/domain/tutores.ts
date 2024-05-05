@@ -1,4 +1,4 @@
 export class Tutores {
-    public id: number;
+    public id_tutor: number;
     public nombre: string;
 }

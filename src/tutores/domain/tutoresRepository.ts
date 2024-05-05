@@ -1,7 +1,7 @@
 import { Tutores } from "./tutores";
 
 export interface TutoresRepository {
-    createTutor(id: number, nombre: string): Promise<Tutores>;
+    createTutor(id_tutor: number, nombre: string): Promise<Tutores>;
     getAllTutores(): Promise<Tutores[]>;
-    getAlumnosFromTutor(id: number): Promise<Tutores>;
+    getAlumnosFromTutor(id_tutor: number): Promise<Tutores>;
 }

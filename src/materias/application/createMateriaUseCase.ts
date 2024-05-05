@@ -4,7 +4,7 @@ import { MateriasRepository } from "../domain/materiasRepository";
 export class CreateMateriaUseCase {
     constructor(private repository: MateriasRepository) {}
 
-    async execute(id: number, nombre: string): Promise<Materia> {
-        return this.repository.createMateria(id, nombre);
+    async execute(id_materia: number, nombre: string): Promise<Materia> {
+        return this.repository.createMateria(id_materia, nombre);
     }
 }

@@ -6,9 +6,9 @@ export class AddAlumnoToTutorController {
     constructor(private useCase: AddAlumnoToTutorUseCase) {}
 
     async run(req: Request, res: Response) {
-        const { id, tutor} = req.body;
+        const { id_alumno, id_tutor} = req.body;
 
-        await this.useCase.execute(id, tutor);
+        await this.useCase.execute(id_alumno, id_tutor);
 
         res.status(201).json();
 

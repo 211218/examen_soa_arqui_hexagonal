@@ -11,6 +11,9 @@ import { AddAlumnoToTutorController } from "./controllers/addAlumnoToTutorContro
 import { AddAlumnoToMateriaUseCase } from "../application/addAlumnoToMateriaUseCase";
 import { AddAlumnoToMateriaController } from "./controllers/addAlumnoToMateriaController";
 
+import { GetMateriasFromAlumnoUseCase } from "../application/getMateriasFromAlumnoUseCase";
+import { GetMateriasFromAlumnoController } from "./controllers/getMateriasFromAlumnoController";
+
 export const mysqlAlumnosRepository = new MysqlAlumnosRepository();
 
 export const createAlumnoUseCase = new CreateAlumnoUseCase(mysqlAlumnosRepository);
@@ -24,3 +27,6 @@ export const addAlumnoToTutorController = new AddAlumnoToTutorController(addAlum
 
 export const addAlumnoToMateriaUseCase = new AddAlumnoToMateriaUseCase(mysqlAlumnosRepository);
 export const addAlumnoToMateriaController = new AddAlumnoToMateriaController(addAlumnoToMateriaUseCase);
+
+export const getMateriasFromAlumnoUseCase = new GetMateriasFromAlumnoUseCase(mysqlAlumnosRepository);
+export const getMateriasFromAlumnoController = new GetMateriasFromAlumnoController(getMateriasFromAlumnoUseCase);

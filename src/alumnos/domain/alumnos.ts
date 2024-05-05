@@ -1,7 +1,7 @@
 export class Alumno {
-    public id: number;
+    public id_alumno: number;
     public nombre: string;
     public matricula: number;
-    public tutor: number;
-    public materias: number;
+    public id_tutor: number;
+    public id_materia: number;
 }

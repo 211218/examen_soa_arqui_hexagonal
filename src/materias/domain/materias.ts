@@ -1,4 +1,4 @@
 export class Materia {
-    public id: number;
+    public id_materia: number;
     public nombre: string;
 }

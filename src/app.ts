@@ -12,9 +12,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-app.use('/api/v1/alumno', alumnosRoutes);
-app.use('/api/v1/tutor', tutoresRoutes);
-app.use('/api/v1/materia', materiasRoutes);
+app.use('/api/v1/alumnos', alumnosRoutes);
+app.use('/api/v1/tutores', tutoresRoutes);
+app.use('/api/v1/materias', materiasRoutes);
 
 const port = process.env.PORT || 3001;
 app.listen(port, () => {

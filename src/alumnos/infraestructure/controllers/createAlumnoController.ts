@@ -6,9 +6,9 @@ export class CreateAlumnoController {
     constructor(private useCase: CreateAlumnoUseCase) {}
 
     async run(req: Request, res: Response) {
-        const { id, nombre, matricula } = req.body;
+        const { id_alumno, nombre, matricula } = req.body;
         try {
-            const alumno: Alumno = await this.useCase.execute(id, nombre, matricula);
+            const alumno: Alumno = await this.useCase.execute(id_alumno, nombre, matricula);
             res.status(201).json(alumno);
         } catch (error: any) {
             if (error instanceof Error) {

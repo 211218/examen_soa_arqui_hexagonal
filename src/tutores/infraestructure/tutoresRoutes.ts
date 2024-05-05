@@ -3,6 +3,6 @@ import { createTutorController, getAllTutorController, getAlumnoToTutorControlle
 
 export const tutoresRoutes = express.Router();
 
-tutoresRoutes.post("/register", createTutorController.run.bind(createTutorController));
-tutoresRoutes.get("/all", getAllTutorController.run.bind(getAllTutorController));
-tutoresRoutes.get("/id", getAlumnoToTutorController.run.bind(getAlumnoToTutorController));
+tutoresRoutes.post("/create", createTutorController.run.bind(createTutorController));
+tutoresRoutes.get("/list_tutores", getAllTutorController.run.bind(getAllTutorController));
+tutoresRoutes.get("/list_alumnos", getAlumnoToTutorController.run.bind(getAlumnoToTutorController));

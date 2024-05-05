@@ -6,9 +6,9 @@ export class CreateTutorController {
     constructor(private useCase: CreateTutoresUseCase) {}
 
     async run(req: Request, res: Response) {
-        const { id, nombre } = req.body;
+        const { id_tutor, nombre } = req.body;
         try {
-            const tutor: Tutores = await this.useCase.execute(id, nombre);
+            const tutor: Tutores = await this.useCase.execute(id_tutor, nombre);
             res.status(201).json(tutor);
         } catch (error: any) {
             if (error instanceof Error) {

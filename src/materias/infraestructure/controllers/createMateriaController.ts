@@ -9,8 +9,15 @@ export class CreateMateriaController {
         const id_materia = req.body.id_materia;
         const nombre = req.body.nombre;
 
-        const materia: Materia = await this.useCase.execute(id_materia, nombre);
-
-        res.status(201).json(materia);
+        try {
+            const materia: Materia = await this.useCase.execute(id_materia, nombre);
+            res.status(201).json(materia);
+        } catch (error) {
+            if (error instanceof Error) {
+                res.status(400).json({ message: error.message });
+            } else {
+                res.status(500).json({ message: "Error interno del servidor" });
+            }
+        }
     }
 }

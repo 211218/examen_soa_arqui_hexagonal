@@ -8,10 +8,11 @@ export class AddAlumnoToMateriaController {
     async run(req: Request, res: Response) {
         const { id_alumno, id_materia} = req.body;
 
-        await this.useCase.execute(id_alumno, id_materia);
-
-        res.status(201).json();
-
+        try {
+            await this.useCase.execute(id_alumno, id_materia);
+            res.status(201).json({ message: 'Asignación exitosa de materia al alumno.' });
+        } catch (error) {
+            res.status(500).json({ message: 'Error al asignar materia al alumno.' });
+        }
     }
-
 }

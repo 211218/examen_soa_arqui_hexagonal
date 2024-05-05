@@ -7,4 +7,8 @@ export class MysqlMateriasRepository implements MateriasRepository {
         const result = await query('INSERT INTO materias (id, nombre) VALUES (?, ?)', [id, nombre]);
         return { id, nombre };
     }
+    async getAllMaterias(): Promise<Materia[]> {
+        const result = await query('SELECT * FROM materias');
+        return result;
+    }
 }

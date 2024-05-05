@@ -17,4 +17,8 @@ export class MysqlAlumnosRepository implements AlumnoRepository {
         await query('UPDATE alumnos SET tutor = ? WHERE id = ?', [tutor, id]);
     }
 
+    async addAlumnoToMateria(id: number, materias: number): Promise<void> {
+        await query('UPDATE alumnos SET materias = ? WHERE id = ?', [materias, id]);
+    }
+
 }

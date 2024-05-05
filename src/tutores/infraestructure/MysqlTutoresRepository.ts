@@ -11,4 +11,8 @@ export class MysqlTutoresRepository implements TutoresRepository {
         const result = await query('SELECT * FROM tutor');
         return result;
     }
+    async getAlumnosFromTutor(id: number): Promise<Tutores> {
+        const result = await query('SELECT * FROM alumnos WHERE tutor = ?', [id]);
+        return result;
+    }
 }

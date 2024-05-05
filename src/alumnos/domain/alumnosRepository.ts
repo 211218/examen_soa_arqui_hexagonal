@@ -8,5 +8,7 @@ export interface AlumnoRepository {
     getAllAlumnos(): Promise<Alumno[]>;
     //agregar un alumno a un tutor, usando el ID del alumno y el ID del tutor
     addAlumnoToTutor(id: number, tutor: number): Promise<void>;
+    //agregar una materia a un alumno, usando el ID del alumno y el ID de la materia
+    addAlumnoToMateria(id: number, materias: number): Promise<void>;
 
 }
